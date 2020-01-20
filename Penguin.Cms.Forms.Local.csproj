@@ -9,7 +9,7 @@
     <RootNamespace>Penguin.Cms.Forms</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <ProjectReference Include="..\Penguin.Cms.Abstractions\Penguin.Cms.Abstractions.Local.csproj" />
     <ProjectReference Include="..\Penguin.Cms.Entities\Penguin.Cms.Entities.Local.csproj" />
     <ProjectReference Include="..\Penguin.DependencyInjection.Abstractions\Penguin.DependencyInjection.Abstractions.Local.csproj" />
