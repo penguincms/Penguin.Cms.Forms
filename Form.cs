@@ -1,6 +1,5 @@
 ﻿using Penguin.Cms.Entities;
 using Penguin.Persistence.Abstractions.Attributes.Control;
-using Penguin.Persistence.Abstractions.Attributes.Relations;
 using Penguin.Persistence.Abstractions.Attributes.Rendering;
 using System;
 using System.Diagnostics.CodeAnalysis;
@@ -19,6 +18,8 @@ namespace Penguin.Cms.Forms
     [SuppressMessage("Globalization", "CA1303:Do not pass literals as localized parameters")]
     public abstract class Form : AuditableEntity
     {
+        private const string CANT_SET_GUID_MESSAGE = "Cant set guid on concrete from implementation";
+
         [DontAllow(DisplayContexts.Edit | DisplayContexts.BatchEdit)]
         [Display(Name = "Friendly Url")]
         public virtual string FriendlyUrl => $"/Form/{this.Name.Replace(" ", "-")}";
@@ -63,7 +64,5 @@ namespace Penguin.Cms.Forms
         [DontAllow(DisplayContexts.Edit | DisplayContexts.BatchEdit)]
         [Display(Name = "Permanent Url")]
         public virtual string PermanentUrl => this.FriendlyUrl;
-
-        private const string CANT_SET_GUID_MESSAGE = "Cant set guid on concrete from implementation";
     }
 }

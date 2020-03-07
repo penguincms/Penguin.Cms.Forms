@@ -12,12 +12,12 @@ namespace Penguin.Cms.Forms
         {
             get
             {
-                foreach (string Key in GetKeys())
+                foreach (string Key in this.GetKeys())
                 {
                     yield return new SubmittedFormField()
                     {
                         Name = Key,
-                        Value = GetValue(Key)
+                        Value = this.GetValue(Key)
                     };
                 }
             }
@@ -42,6 +42,9 @@ namespace Penguin.Cms.Forms
             return toReturn;
         }
 
-        public string GetValue(string Key) => JObject.Parse(this.FormData)[Key].ToString();
+        public string GetValue(string Key)
+        {
+            return JObject.Parse(this.FormData)[Key].ToString();
+        }
     }
 }

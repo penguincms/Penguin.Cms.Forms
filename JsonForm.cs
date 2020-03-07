@@ -23,7 +23,7 @@ namespace Penguin.Cms.Forms
 
         public override bool IsJsonForm => true;
 
-        public override string Name { get => ExternalId; set => ExternalId = value; }
+        public override string Name { get => this.ExternalId; set => this.ExternalId = value; }
 
         [DontAllow(DisplayContexts.Edit | DisplayContexts.BatchEdit)]
         [Display(Name = "Permanent Url")]
