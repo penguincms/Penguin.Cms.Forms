@@ -15,7 +15,6 @@ namespace Penguin.Cms.Forms
     /// to set properties that would be instance properties on Json Forms. Dont touch them unless you can replace them
     [SuppressMessage("Design", "CA1056:Uri properties should not be strings")]
     [SuppressMessage("Naming", "CA1720:Identifier contains type name")]
-    [SuppressMessage("Globalization", "CA1303:Do not pass literals as localized parameters")]
     public abstract class Form : AuditableEntity
     {
         private const string CANT_SET_GUID_MESSAGE = "Cant set guid on concrete from implementation";
