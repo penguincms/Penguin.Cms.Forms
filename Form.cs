@@ -13,7 +13,6 @@ namespace Penguin.Cms.Forms
     /// As such it needs to be coded in
     /// a way that allows new instances of concrete forms to pretend to be json form instances. This is why it has some wonkey overrides
     /// to set properties that would be instance properties on Json Forms. Dont touch them unless you can replace them
-    [SuppressMessage("Design", "CA1056:Uri properties should not be strings")]
     [SuppressMessage("Naming", "CA1720:Identifier contains type name")]
     public abstract class Form : AuditableEntity
     {
