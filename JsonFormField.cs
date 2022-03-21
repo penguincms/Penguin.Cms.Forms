@@ -15,7 +15,7 @@ namespace Penguin.Cms.Forms
         public string Label { get; set; }
         [JsonProperty("name")]
         public string Name { get; set; }
-        [JsonProperty("required")] 
+        [JsonProperty("required")]
         public bool Required { get; set; }
         [JsonProperty("subtype")]
         public string Subtype { get; set; }
