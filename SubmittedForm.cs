@@ -42,6 +42,9 @@ namespace Penguin.Cms.Forms
             return toReturn;
         }
 
-        public string GetValue(string Key) => JObject.Parse(this.FormData)[Key].ToString();
+        public string GetValue(string Key)
+        {
+            return JObject.Parse(this.FormData)[Key].ToString();
+        }
     }
 }
