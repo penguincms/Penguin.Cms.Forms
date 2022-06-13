@@ -2,7 +2,7 @@
   <Import Project="Penguin.Projects.Shared\Penguin.Projects.Shared.csproj" />
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1;net5.0</TargetFrameworks>
-    <PackageProjectUrl>https://github.com/PenguinCms/Penguin.Cms.Forms</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/PenguinCMS/Penguin.Cms.Forms</PackageProjectUrl>
     <Version>5.0.5</Version>
     <Description>Not Available</Description>
     <AssemblyName>Penguin.Cms.Forms</AssemblyName>
@@ -11,8 +11,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="Penguin.Forms.Abstractions" Version="5.0.6-TAX9354" />
-    <PackageReference Include="Penguin.Cms.Abstractions" Version="5.0.6-TAX9354" />
-    <PackageReference Include="Penguin.Cms.Entities" Version="5.0.6-TAX9354" />
+    <PackageReference Include="Penguin.Forms.Abstractions" Version="5.0.6-TAZCES9" />
+    <PackageReference Include="Penguin.Cms.Abstractions" Version="5.0.6-TAZCES9" />
+    <PackageReference Include="Penguin.Cms.Entities" Version="5.0.6-TAZCES9" />
   </ItemGroup>
 </Project>
