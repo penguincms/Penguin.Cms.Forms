@@ -11,8 +11,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="Penguin.Forms.Abstractions" Version="5.0.6-TB0E36F" />
-    <PackageReference Include="Penguin.Cms.Abstractions" Version="5.0.6-TB0E36F" />
-    <PackageReference Include="Penguin.Cms.Entities" Version="5.0.6-TB0E36F" />
+    <PackageReference Include="Penguin.Forms.Abstractions" Version="5.0.6-TB1ZEZV" />
+    <PackageReference Include="Penguin.Cms.Abstractions" Version="5.0.6-TB1ZEZV" />
+    <PackageReference Include="Penguin.Cms.Entities" Version="5.0.6-TB1ZEZV" />
   </ItemGroup>
 </Project>
