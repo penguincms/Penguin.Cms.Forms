@@ -20,25 +20,15 @@ namespace Penguin.Cms.Forms
 
         [DontAllow(DisplayContexts.Edit | DisplayContexts.BatchEdit)]
         [Display(Name = "Friendly Url")]
-        public virtual string FriendlyUrl => $"/Form/{this.Name.Replace(" ", "-")}";
+        public virtual string FriendlyUrl => $"/Form/{Name.Replace(" ", "-")}";
 
         [DontAllow(DisplayContexts.Edit)]
         public override Guid Guid
         {
-            get
-            {
-                if (this.IsJsonForm)
-                {
-                    return base.Guid;
-                }
-                else
-                {
-                    return new Guid(this.GetType().GetHashCode(), 0, 0, new byte[8]);
-                }
-            }
+            get => IsJsonForm ? base.Guid : new Guid(GetType().GetHashCode(), 0, 0, new byte[8]);
             set
             {
-                if (this.IsJsonForm)
+                if (IsJsonForm)
                 {
                     //This hurts to do since this value should never be set, but since I havent
                     //blocked it yet, it needs to be consistant
@@ -55,12 +45,12 @@ namespace Penguin.Cms.Forms
 
         public virtual string Name
         {
-            get => this.GetType().GetCustomAttribute<DisplayAttribute>()?.Name ?? this.ExternalId.Replace("-", " ");
+            get => GetType().GetCustomAttribute<DisplayAttribute>()?.Name ?? ExternalId.Replace("-", " ");
             set { }
         }
 
         [DontAllow(DisplayContexts.Edit | DisplayContexts.BatchEdit)]
         [Display(Name = "Permanent Url")]
-        public virtual string PermanentUrl => this.FriendlyUrl;
+        public virtual string PermanentUrl => FriendlyUrl;
     }
 }

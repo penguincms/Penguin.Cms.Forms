@@ -12,29 +12,29 @@ namespace Penguin.Cms.Forms
         {
             get
             {
-                foreach (string Key in this.GetKeys())
+                foreach (string Key in GetKeys())
                 {
                     yield return new SubmittedFormField()
                     {
                         Name = Key,
-                        Value = this.GetValue(Key)
+                        Value = GetValue(Key)
                     };
                 }
             }
         }
 
         public string FormData { get; set; } = string.Empty;
-        string IFormSubmission.Name => this.Owner.ToString();
+        string IFormSubmission.Name => Owner.ToString();
         public Guid Owner { get; set; }
-        Guid IFormSubmission.Owner => this.Owner;
+        Guid IFormSubmission.Owner => Owner;
 
         public Guid Submitter { get; set; }
 
         public List<string> GetKeys()
         {
-            List<string> toReturn = new List<string>();
+            List<string> toReturn = new();
 
-            foreach (JProperty prop in JObject.Parse(this.FormData).Properties())
+            foreach (JProperty prop in JObject.Parse(FormData).Properties())
             {
                 toReturn.Add(prop.Name);
             }
@@ -44,7 +44,7 @@ namespace Penguin.Cms.Forms
 
         public string GetValue(string Key)
         {
-            return JObject.Parse(this.FormData)[Key].ToString();
+            return JObject.Parse(FormData)[Key].ToString();
         }
     }
 }

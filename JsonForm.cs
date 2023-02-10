@@ -11,7 +11,7 @@ namespace Penguin.Cms.Forms
     {
         [NotMapped]
         [DontAllow(DisplayContexts.Any)]
-        public List<JsonFormField> Fields => !string.IsNullOrWhiteSpace(this.FormData) ? JsonConvert.DeserializeObject<List<JsonFormField>>(this.FormData) : new List<JsonFormField>();
+        public List<JsonFormField> Fields => !string.IsNullOrWhiteSpace(FormData) ? JsonConvert.DeserializeObject<List<JsonFormField>>(FormData) : new List<JsonFormField>();
 
         [DontAllow(DisplayContexts.Any)]
         public string FormData { get; set; } = string.Empty;
@@ -19,14 +19,14 @@ namespace Penguin.Cms.Forms
         [DontAllow(DisplayContexts.Edit | DisplayContexts.BatchEdit)]
         [Display(Name = "Friendly Url")]
         [DisplayType("System.String.Url")]
-        public override string FriendlyUrl => $"/Form/{this.ExternalId}";
+        public override string FriendlyUrl => $"/Form/{ExternalId}";
 
         public override bool IsJsonForm => true;
 
-        public override string Name { get => this.ExternalId; set => this.ExternalId = value; }
+        public override string Name { get => ExternalId; set => ExternalId = value; }
 
         [DontAllow(DisplayContexts.Edit | DisplayContexts.BatchEdit)]
         [Display(Name = "Permanent Url")]
-        public override string PermanentUrl => $"/Form/View/{this._Id}";
+        public override string PermanentUrl => $"/Form/View/{_Id}";
     }
 }
