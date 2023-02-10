@@ -24,8 +24,11 @@ namespace Penguin.Cms.Forms
         }
 
         public string FormData { get; set; } = string.Empty;
+
         string IFormSubmission.Name => Owner.ToString();
+
         public Guid Owner { get; set; }
+
         Guid IFormSubmission.Owner => Owner;
 
         public Guid Submitter { get; set; }
